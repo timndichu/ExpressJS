@@ -69,3 +69,23 @@ router.post() //for post requests
 ### Exporting the routes to be used in the main app.js file
 At the bottom of the file: </br>
 ```module.exports = router;```
+
+### Importing in the app.js file:
+
+```
+const express = require('express');
+const app = express();
+const adminRoutes = require('./routes/admin');
+app.use(adminRoutes);
+```
+## Adding a 404 Error Page
+```
+app.use((req, res, next) => {
+res.status(404).send('<h1> Page not Found </h1>');
+});
+```
+
+# Creating HTML Pages
+Create the HTML pages
+## Serving HTML Pages
+The first thing is to import ```const path = require('path');```
